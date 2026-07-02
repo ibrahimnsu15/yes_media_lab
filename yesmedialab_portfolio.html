@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yes Media Lab – AI-Powered Content & Social Media Growth Solutions</title>
+  <link rel="icon" type="image/png" href="assets/yesmedialab-logo.png">
+  <link rel="apple-touch-icon" href="assets/yesmedialab-logo.png">
+  <meta property="og:image" content="assets/yesmedialab-logo.png">
+  <meta name="twitter:image" content="assets/yesmedialab-logo.png">
+  <meta name="description"
+    content="Yes Media Lab is a digital content agency specializing in AI-powered content creation, YouTube automation, social media growth, and channel management.">
+  <meta name="keywords"
+    content="AI content creation services, YouTube automation agency, social media content creation, social media SEO services, script writing services">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --purple: #6C63FF;
+      --navy: #0F172A;
+      --teal: #14B8A6;
+      --mint: #00E5A0;
+      --white: #FFFFFF;
+      --gray-100: #F8FAFC;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --font-display: 'Manrope', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: #fff;
+      color: var(--navy);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(108, 99, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .nav-logo img,
+    .footer-logo img,
+    .brand-logo {
+      height: 44px;
+      width: auto;
+      display: block;
+      background: transparent;
+      object-fit: contain;
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .nav-logo-name {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #c4fff0 45%, var(--mint) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 14px rgba(0, 229, 160, 0.35));
+      white-space: nowrap;
+    }
+
+    .nav-logo:hover .nav-logo-name {
+      filter: drop-shadow(0 0 18px rgba(0, 229, 160, 0.55));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--mint);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      font-family: var(--font-display);
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 5rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 70% 40%, rgba(108, 99, 255, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 20% 70%, rgba(20, 184, 166, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(0, 229, 160, 0.06) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(108, 99, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 99, 255, 0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(108, 99, 255, 0.12);
+      border: 1px solid rgba(108, 99, 255, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      color: var(--purple);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-display);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--mint);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--mint) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), #8B5CF6);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: var(--font-display);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      font-family: var(--font-display);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.25s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--mint);
+      color: var(--mint);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-stat-num span {
+      color: var(--mint);
+    }
+
+    .hero-stat-label {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    /* hero visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-orb {
+      width: 380px;
+      height: 380px;
+      position: relative;
+    }
+
+    .orb-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      animation: spin-ring 20s linear infinite;
+    }
+
+    .orb-ring:nth-child(2) {
+      inset: 30px;
+      border-color: rgba(20, 184, 166, 0.2);
+      animation-duration: 14s;
+      animation-direction: reverse;
+    }
+
+    .orb-ring:nth-child(3) {
+      inset: 60px;
+      border-color: rgba(0, 229, 160, 0.15);
+      animation-duration: 10s;
+    }
+
+    @keyframes spin-ring {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .orb-center {
+      position: absolute;
+      inset: 90px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.25) 0%, rgba(20, 184, 166, 0.1) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .orb-icon {
+      font-size: 3rem;
+    }
+
+    .orb-logo {
+      width: 72%;
+      max-width: 130px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(108, 99, 255, 0.35);
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      font-family: var(--font-display);
+    }
+
+    .floating-tag span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .floating-tag .tag-text {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .floating-tag .tag-sub {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.7rem;
+    }
+
+    .ft1 {
+      top: 20px;
+      left: -20px;
+      animation: float1 5s ease-in-out infinite;
+    }
+
+    .ft2 {
+      bottom: 30px;
+      left: -10px;
+      animation: float2 6s ease-in-out infinite 1s;
+    }
+
+    .ft3 {
+      top: 40px;
+      right: -20px;
+      animation: float1 7s ease-in-out infinite 0.5s;
+    }
+
+    .ft4 {
+      bottom: 20px;
+      right: -10px;
+      animation: float2 5.5s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes float1 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes float2 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .section-title.light {
+      color: #fff;
+    }
+
+    .section-sub {
+      color: var(--gray-600);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+
+    .section-sub.light {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-bg {
+      background: var(--gray-100);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-logo {
+      width: 72px;
+      height: auto;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .about-card-main {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: #fff;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+    }
+
+    .about-card-main h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--mint);
+    }
+
+    .about-card-main p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+    }
+
+    .about-badge-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .about-badge-label {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--gray-200);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .about-feat:hover {
+      border-color: var(--purple);
+      transform: translateY(-2px);
+    }
+
+    .about-feat-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.12), rgba(20, 184, 166, 0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .about-feat-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      color: var(--navy);
+    }
+
+    /* ── SERVICES ── */
+    .services-bg {
+      background: var(--navy);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.08) 0%, rgba(20, 184, 166, 0.04) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(108, 99, 255, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(20, 184, 166, 0.1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(108, 99, 255, 0.2);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .service-tag {
+      background: rgba(108, 99, 255, 0.12);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-weight: 500;
+    }
+
+    .service-card-featured {
+      border-color: rgba(108, 99, 255, 0.4);
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+    }
+
+    /* ── AI STACK & YOUTUBE AUDIT ── */
+    .ai-stack-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .ai-models-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .ai-model-card {
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--gray-200);
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    .ai-model-card:hover {
+      border-color: var(--purple);
+      box-shadow: 0 8px 24px rgba(108, 99, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .ai-model-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .ai-model-use {
+      color: var(--gray-600);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .ai-model-card.claude {
+      border-top: 3px solid #D97757;
+    }
+
+    .ai-model-card.chatgpt {
+      border-top: 3px solid #10A37F;
+    }
+
+    .ai-model-card.gemini {
+      border-top: 3px solid #4285F4;
+    }
+
+    .ai-model-card.grok {
+      border-top: 3px solid #1DA1F2;
+    }
+
+    .audit-spotlight {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a2744 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-spotlight::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .audit-spotlight .section-label {
+      color: var(--mint);
+    }
+
+    .audit-spotlight h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.75rem 0 1rem;
+      position: relative;
+    }
+
+    .audit-spotlight p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .audit-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .audit-list li {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.88rem;
+      padding: 0.45rem 0 0.45rem 1.5rem;
+      position: relative;
+    }
+
+    .audit-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .audit-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .audit-cta:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* ── WHY CHOOSE US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .why-card {
+      padding: 2rem;
+      border-radius: 14px;
+      border: 1px solid var(--gray-200);
+      background: #fff;
+      transition: all 0.3s;
+    }
+
+    .why-card:hover {
+      border-color: var(--purple);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 6px 20px rgba(108, 99, 255, 0.25);
+    }
+
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .why-card p {
+      color: var(--gray-600);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* ── PROCESS ── */
+    .process-bg {
+      background: var(--navy);
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      box-shadow: 0 0 0 6px rgba(108, 99, 255, 0.12), 0 0 0 12px rgba(108, 99, 255, 0.06);
+    }
+
+    .process-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .process-step p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .process-step-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── PORTFOLIO ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .portfolio-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, 0.12);
+      border-color: var(--purple);
+    }
+
+    .portfolio-thumb {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-thumb::after {
+      content: attr(data-label);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      background: linear-gradient(0deg, rgba(15, 23, 42, 0.7) 0%, transparent 60%);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-display);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pt1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .pt2 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .pt3 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .pt4 {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .pt5 {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .pt6 {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .portfolio-info {
+      padding: 1.25rem;
+    }
+
+    .portfolio-cat {
+      font-size: 0.7rem;
+      color: var(--teal);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      margin-bottom: 0.4rem;
+    }
+
+    .portfolio-info h3 {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .portfolio-info p {
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-bg {
+      background: var(--navy);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(108, 99, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .star {
+      color: #F59E0B;
+      font-size: 1rem;
+    }
+
+    .testi-card blockquote {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .testi-role {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 0.1rem;
+    }
+
+    /* ── FAQ ── */
+    .faq-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1.25rem 0;
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+
+    .faq-q:hover {
+      color: var(--purple);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      color: var(--purple);
+    }
+
+    .faq-a {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease, padding 0.3s;
+      color: var(--gray-600);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding: 0 1.5rem 0 0;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding-top: 0.75rem;
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--purple);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+
+    /* ── CONTACT ── */
+    .contact-bg {
+      background: var(--navy);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--mint);
+    }
+
+    .contact-link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(108, 99, 255, 0.15);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-display);
+      letter-spacing: 0.03em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--purple);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select option {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--purple), var(--teal));
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: var(--font-display);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
+    }
+
+    .form-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070D1A;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 260px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-logo-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.87rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--mint);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.82rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--teal) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    }
+
+    .cta-band h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-band p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .cta-band .btn-white {
+      background: #fff;
+      color: var(--purple);
+      padding: 0.9rem 2.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: var(--font-display);
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.25s;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-band .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+
+      .services-grid,
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+
+      .process-timeline::before {
+        display: none;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-badge {
+        display: none;
+      }
+
+      .services-grid,
+      .why-grid,
+      .portfolio-grid,
+      .testimonials-grid,
+      .ai-stack-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-logo-name {
+        font-size: 0.92rem;
+      }
+
+      .nav {
+        padding: 0.85rem 1.25rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" id="navbar">
+    <a class="nav-logo" href="#home">
+      <span class="nav-logo-mark">
+        <img id="site-logo" class="brand-logo" src="assets/yesmedialab-logo.png" alt="Yes Media Lab">
+      </span>
+      <span class="nav-logo-name">Yes Media Lab</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai-stack">AI Stack</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Free Consultation</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">AI-Powered Digital Agency</div>
+        <h1>
+          AI-Powered Content &<br>
+          <span class="grad">Social Media Growth</span><br>
+          Solutions
+        </h1>
+        <p class="hero-sub">We help brands, creators, and businesses scale their online presence through AI-powered
+          content creation, YouTube automation, social media SEO, and full channel management.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Book Free Consultation</a>
+          <a href="#services" class="btn-outline">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">200<span>+</span></div>
+            <div class="hero-stat-label">Channels Managed</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">50<span>M+</span></div>
+            <div class="hero-stat-label">Views Generated</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">98<span>%</span></div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orb">
+          <div class="orb-ring"></div>
+          <div class="orb-ring"></div>
+          <div class="orb-ring"></div>
+          <div class="orb-center">
+            <img class="orb-logo" src="assets/yesmedialab-logo.png" alt="Yes Media Lab">
+          </div>
+          <div class="floating-tag ft1">
+            <span class="dot" style="background:#6C63FF"></span>
+            <div>
+              <div class="tag-text">AI Content</div>
+              <div class="tag-sub">Generated in seconds</div>
+            </div>
+          </div>
+          <div class="floating-tag ft2">
+            <span class="dot" style="background:#14B8A6"></span>
+            <div>
+              <div class="tag-text">YouTube Growth</div>
+              <div class="tag-sub">+127% this month</div>
+            </div>
+          </div>
+          <div class="floating-tag ft3">
+            <span class="dot" style="background:#00E5A0"></span>
+            <div>
+              <div class="tag-text">SEO Optimized</div>
+              <div class="tag-sub">Top rankings</div>
+            </div>
+          </div>
+          <div class="floating-tag ft4">
+            <span class="dot" style="background:#F59E0B"></span>
+            <div>
+              <div class="tag-text">Social Media</div>
+              <div class="tag-sub">10k+ new followers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-bg" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-card-main">
+            <img class="about-logo" src="assets/yesmedialab-logo.png" alt="Yes Media Lab">
+            <h3>🚀 Our Mission</h3>
+            <p>We combine creativity, automation, and modern AI technology to help businesses and creators produce
+              engaging content, build audiences, and grow their brands efficiently — saving time while delivering
+              measurable results.</p>
+            <br>
+            <p>Whether you're a startup, personal brand, or established business, our team provides end-to-end content
+              solutions tailored to your goals.</p>
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num">5+</div>
+            <div class="about-badge-label">Years Experience</div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:0.15s">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title">A Digital Agency Built for the AI Era</h2>
+          <p class="section-sub">Yes Media Lab is a digital content agency specializing in AI-powered content creation,
+            social media growth, YouTube automation, and creator support services.</p>
+          <div class="about-features">
+            <div class="about-feat">
+              <div class="about-feat-icon">🤖</div>
+              <div class="about-feat-text">AI-First Workflows</div>
+            </div>
+            <div class="about-feat">
+              <div class="about-feat-icon">📈</div>
+              <div class="about-feat-text">Data-Driven Growth</div>
+            </div>
+            <div class="about-feat">
+              <div class="about-feat-icon">🎬</div>
+              <div class="about-feat-text">YouTube Automation</div>
+            </div>
+            <div class="about-feat">
+              <div class="about-feat-icon">✍️</div>
+              <div class="about-feat-text">Script Writing</div>
+            </div>
+            <div class="about-feat">
+              <div class="about-feat-icon">📱</div>
+              <div class="about-feat-text">Social Media SEO</div>
+            </div>
+            <div class="about-feat">
+              <div class="about-feat-icon">🎯</div>
+              <div class="about-feat-text">End-to-End Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-bg" id="services">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title light">Our Services</h2>
+        <p class="section-sub light" style="margin: 1rem auto 0">Premium content solutions powered by AI and human
+          creativity — built to scale your brand.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card service-card-featured reveal">
+          <div class="service-icon">▶️</div>
+          <h3>YouTube Automation</h3>
+          <p>Full-stack YouTube channel management from niche research and scripting to editing, publishing, and
+            analytics monitoring.</p>
+          <div class="service-tags">
+            <span class="service-tag">Niche Research</span>
+            <span class="service-tag">Script Writing</span>
+            <span class="service-tag">Video Editing</span>
+            <span class="service-tag">Thumbnails</span>
+            <span class="service-tag">Analytics</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.1s">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Content</h3>
+          <p>Engaging posts, Reels, and Shorts for Instagram, Facebook, LinkedIn, and more — all aligned with your brand
+            voice.</p>
+          <div class="service-tags">
+            <span class="service-tag">Instagram</span>
+            <span class="service-tag">Reels</span>
+            <span class="service-tag">LinkedIn</span>
+            <span class="service-tag">Content Calendar</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.2s">
+          <div class="service-icon">🤖</div>
+          <h3>AI Content Creation</h3>
+          <p>AI-generated visuals, videos, voice-overs, and writing tools — powered by automated content pipelines for
+            scale.</p>
+          <div class="service-tags">
+            <span class="service-tag">AI Visuals</span>
+            <span class="service-tag">AI Voice</span>
+            <span class="service-tag">AI Writing</span>
+            <span class="service-tag">Automation</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.1s">
+          <div class="service-icon">🔍</div>
+          <h3>Social Media SEO</h3>
+          <p>Profile optimization, keyword research, hashtag strategy, and YouTube SEO to maximize your content
+            discoverability.</p>
+          <div class="service-tags">
+            <span class="service-tag">Profile SEO</span>
+            <span class="service-tag">Hashtags</span>
+            <span class="service-tag">YouTube SEO</span>
+            <span class="service-tag">Shorts SEO</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.2s">
+          <div class="service-icon">📝</div>
+          <h3>Professional Script Writing</h3>
+          <p>Documentary scripts, Shorts scripts, educational content, commercial copy, and AI-assisted storytelling
+            research.</p>
+          <div class="service-tags">
+            <span class="service-tag">Documentaries</span>
+            <span class="service-tag">Shorts Scripts</span>
+            <span class="service-tag">Commercial</span>
+            <span class="service-tag">Educational</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.3s">
+          <div class="service-icon">🛠️</div>
+          <h3>Channel & Page Management</h3>
+          <p>Daily publishing, community management, audience engagement, analytics reporting, and full brand
+            consistency.</p>
+          <div class="service-tags">
+            <span class="service-tag">Publishing</span>
+            <span class="service-tag">Community</span>
+            <span class="service-tag">Analytics</span>
+            <span class="service-tag">Growth Strategy</span>
+          </div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.15s">
+          <div class="service-icon">📋</div>
+          <h3>YouTube Channel Audit</h3>
+          <p>In-depth channel review covering content quality, SEO, thumbnails, retention, and competitor gaps — paired
+            with a proven, data-backed growth strategy.</p>
+          <div class="service-tags">
+            <span class="service-tag">Channel Audit</span>
+            <span class="service-tag">Growth Plan</span>
+            <span class="service-tag">SEO Review</span>
+            <span class="service-tag">Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI STACK & YOUTUBE AUDIT -->
+  <section id="ai-stack">
+    <div class="container">
+      <div class="ai-stack-grid">
+        <div class="reveal">
+          <span class="section-label">Our Technology</span>
+          <h2 class="section-title">Powered by Leading AI Models</h2>
+          <p class="section-sub">Yes Media Lab integrates the world's most advanced AI platforms into every workflow —
+            from research and scripting to SEO, thumbnails, and content optimization. We pick the right model for each
+            task to deliver faster, smarter results.</p>
+          <div class="ai-models-grid">
+            <div class="ai-model-card claude">
+              <div class="ai-model-name">Claude</div>
+              <div class="ai-model-use">Long-form scripts, research, and nuanced storytelling for documentaries and
+                educational content.</div>
+            </div>
+            <div class="ai-model-card chatgpt">
+              <div class="ai-model-name">ChatGPT</div>
+              <div class="ai-model-use">Content ideation, copywriting, social captions, and rapid creative brainstorming
+                at scale.</div>
+            </div>
+            <div class="ai-model-card gemini">
+              <div class="ai-model-name">Gemini</div>
+              <div class="ai-model-use">Multimodal analysis, video insights, trend research, and data-driven content
+                planning.</div>
+            </div>
+            <div class="ai-model-card grok">
+              <div class="ai-model-name">Grok</div>
+              <div class="ai-model-use">Real-time trend monitoring, viral topic discovery, and fast-turnaround content
+                angles.</div>
+            </div>
+          </div>
+        </div>
+        <div class="audit-spotlight reveal" style="transition-delay:0.15s">
+          <span class="section-label">YouTube Growth</span>
+          <h3>YouTube Channel Audit &amp; Proven Growth Strategy</h3>
+          <p>Not sure why your channel isn't growing? We deliver a comprehensive YouTube channel audit followed by a
+            proven, customized growth strategy built on real analytics — not guesswork.</p>
+          <ul class="audit-list">
+            <li>Full channel &amp; content performance review</li>
+            <li>SEO, titles, thumbnails &amp; retention analysis</li>
+            <li>Competitor benchmarking &amp; niche gap identification</li>
+            <li>90-day proven growth roadmap with clear KPIs</li>
+            <li>Actionable recommendations you can implement immediately</li>
+          </ul>
+          <a href="#contact" class="audit-cta">Book Your Channel Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">The Yes Media Lab Advantage</h2>
+        <p class="section-sub" style="margin: 1rem auto 0">Six core pillars that set us apart from every other digital
+          agency.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">⚡</div>
+          <h3>AI-Powered Workflows</h3>
+          <p>We leverage cutting-edge AI tools to create content faster and more efficiently without sacrificing quality
+            or brand voice.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.1s">
+          <div class="why-icon">🔄</div>
+          <h3>End-to-End Solutions</h3>
+          <p>From initial idea generation to publishing, growth management, and analytics — we handle the complete
+            content lifecycle.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.2s">
+          <div class="why-icon">📊</div>
+          <h3>Data-Driven Growth</h3>
+          <p>Analytics, SEO insights, and audience data guide every strategic decision we make for your brand's growth.
+          </p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.1s">
+          <div class="why-icon">🎨</div>
+          <h3>Creative Excellence</h3>
+          <p>Human creativity amplified by AI innovation produces content that genuinely resonates with audiences and
+            drives engagement.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.2s">
+          <div class="why-icon">🎯</div>
+          <h3>Flexible Freelance Services</h3>
+          <p>Custom solutions tailored for startups, personal brands, and established businesses of every size and
+            budget.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.3s">
+          <div class="why-icon">🤝</div>
+          <h3>Dedicated Support</h3>
+          <p>Reliable communication, transparent reporting, and long-term partnerships built on trust and consistent
+            results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-bg" id="process">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title light">Our 4-Step Process</h2>
+        <p class="section-sub light" style="margin: 1rem auto 0">A clear, proven process from first conversation to
+          lasting growth.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step reveal">
+          <div class="process-num">01</div>
+          <div class="process-step-icon">🔭</div>
+          <h3>Discover</h3>
+          <p>We take time to understand your brand, goals, target audience, and competitive landscape before proposing
+            anything.</p>
+        </div>
+        <div class="process-step reveal" style="transition-delay:0.15s">
+          <div class="process-num">02</div>
+          <div class="process-step-icon">✍️</div>
+          <h3>Create</h3>
+          <p>Our team develops engaging content and tailored strategies using both human creativity and powerful AI
+            tools.</p>
+        </div>
+        <div class="process-step reveal" style="transition-delay:0.3s">
+          <div class="process-num">03</div>
+          <div class="process-step-icon">⚙️</div>
+          <h3>Automate</h3>
+          <p>We implement AI workflows and scalable publishing systems so your content machine runs smoothly and
+            consistently.</p>
+        </div>
+        <div class="process-step reveal" style="transition-delay:0.45s">
+          <div class="process-num">04</div>
+          <div class="process-step-icon">🚀</div>
+          <h3>Grow</h3>
+          <p>Continuous performance optimization, audience expansion, and data-driven refinements to keep growing your
+            brand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Portfolio Highlights</h2>
+        <p class="section-sub" style="margin: 1rem auto 0">A glimpse at the brands and projects we've helped grow
+          through AI-powered content.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-card reveal">
+          <div class="portfolio-thumb pt1" data-label="Social Media Campaigns">📣</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Social Media</div>
+            <h3>Brand Awareness Campaign</h3>
+            <p>Multi-platform campaign generating 2.3M impressions and 180K new followers over 60 days.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" style="transition-delay:0.1s">
+          <div class="portfolio-thumb pt2" data-label="YouTube Automation">▶️</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">YouTube Automation</div>
+            <h3>Faceless Documentary Channel</h3>
+            <p>Built from zero to 50K subscribers in 4 months using fully automated AI content pipeline.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" style="transition-delay:0.2s">
+          <div class="portfolio-thumb pt3" data-label="AI Content">🤖</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">AI Content Creation</div>
+            <h3>AI Product Video Series</h3>
+            <p>30-video series produced using AI visuals and voice, cutting production cost by 70%.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" style="transition-delay:0.1s">
+          <div class="portfolio-thumb pt4" data-label="Script Writing">📝</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Script Writing</div>
+            <h3>Documentary Script Package</h3>
+            <p>12-episode educational series scripts with full AI-assisted research and story structure.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" style="transition-delay:0.2s">
+          <div class="portfolio-thumb pt5" data-label="Branding">🎨</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Personal Branding</div>
+            <h3>Creator Brand Identity</h3>
+            <p>Complete brand overhaul including content strategy, visual identity, and growth roadmap.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" style="transition-delay:0.3s">
+          <div class="portfolio-thumb pt6" data-label="Video Editing">🎬</div>
+          <div class="portfolio-info">
+            <div class="portfolio-cat">Video Editing</div>
+            <h3>Viral Shorts Showcase</h3>
+            <p>Produced 90 optimized Shorts in 30 days achieving average 500K+ views per video.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-bg" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title light">What Our Clients Say</h2>
+        <p class="section-sub light" style="margin: 1rem auto 0">Real results from real brands who trusted Yes Media Lab
+          with their growth.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"Yes Media Lab completely transformed our YouTube presence. In just three months, our channel went
+            from 2K to 48K subscribers. Their AI automation system and scripting quality is truly unmatched."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#6C63FF,#14B8A6)">MR</div>
+            <div>
+              <div class="testi-name">Marcus R.</div>
+              <div class="testi-role">Founder, FinanceEdge Media</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal" style="transition-delay:0.15s">
+          <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"The social media SEO work they did for our brand was game-changing. Our Instagram reach tripled
+            and we're now consistently landing on the Explore page. The team is professional, responsive, and delivers
+            results."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#F59E0B,#EF4444)">ST</div>
+            <div>
+              <div class="testi-name">Sophia T.</div>
+              <div class="testi-role">CEO, StyleForward Brand</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal" style="transition-delay:0.3s">
+          <div class="testi-stars"><span class="star">★</span><span class="star">★</span><span
+              class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <blockquote>"We hired Yes Media Lab for AI content creation and the ROI has been incredible. They produce
+            high-quality content at a scale we never thought possible. Our production costs dropped by 65% while output
+            doubled."</blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#00E5A0,#14B8A6)">AK</div>
+            <div>
+              <div class="testi-name">Aiden K.</div>
+              <div class="testi-role">Digital Director, TechVision Co.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div style="position:relative">
+      <h2>Ready to Grow Your Brand?</h2>
+      <p>Join 200+ brands and creators who trust Yes Media Lab with their digital growth.</p>
+      <a href="#contact" class="btn-white">Start Your Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center">
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What is YouTube automation?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">YouTube automation is the process of running a profitable YouTube channel using a
+            team-based or AI-driven workflow — without appearing on camera. We handle everything from niche selection
+            and scriptwriting to voiceovers, editing, thumbnail design, and publishing, so you earn passive income from
+            the channel without doing the day-to-day work.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How does AI content creation work?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">We use advanced AI tools — including image generators, AI voice synthesis, AI writing
+            assistants, and video production platforms — combined with human oversight and editing. The result is
+            high-quality content produced at scale, faster and at a lower cost than traditional production methods,
+            while maintaining your brand's voice and quality standards.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you manage social media accounts?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">Yes! Our Channel & Page Management service covers daily content publishing, community
+            management, audience engagement, analytics reporting, growth strategy, and brand consistency — across
+            YouTube, Instagram, Facebook, LinkedIn, TikTok, and other platforms. We become an extension of your team.
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Can you provide script writing services only?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">Absolutely. We offer standalone script writing services for YouTube documentaries, Shorts,
+            educational content, commercial scripts, and personal brand storytelling. You can engage us just for
+            scripting and handle production yourself, or use our full end-to-end package.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you offer custom packages?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">Yes — every client is different and we pride ourselves on building custom solutions. During
+            your free consultation, we'll discuss your specific goals, budget, and timeline, then propose a package
+            that's built specifically for your needs rather than a one-size-fits-all offering.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What industries do you work with?
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a">We work across a wide range of industries including e-commerce, finance, technology, health
+            & wellness, education, real estate, entertainment, coaching, SaaS, personal branding, and more. Our
+            AI-powered workflows adapt to any niche, and we've successfully managed channels in over 20 different
+            industries.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-bg" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="section-label">Get In Touch</span>
+          <h2
+            style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:1rem;letter-spacing:-0.02em">
+            Let&rsquo;s Grow Your<br>Brand Together</h2>
+          <p style="color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:2rem">Ready to take your content and
+            social presence to the next level? Book your free consultation and let's map out a strategy that works for
+            your brand.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:yesmedialab.admin@gmail.com">
+              <div class="contact-link-icon">✉️</div>
+              yesmedialab.admin@gmail.com
+            </a>
+            <a class="contact-link" href="tel:+8801832809981">
+              <div class="contact-link-icon">📞</div>
+              +880 1832 809981
+            </a>
+            <a class="contact-link" href="https://www.youtube.com/@YesMediaLab" target="_blank"
+              rel="noopener noreferrer">
+              <div class="contact-link-icon">📺</div>
+              YouTube Channel
+            </a>
+            <a class="contact-link" href="https://www.facebook.com/profile.php?id=61591362758970" target="_blank"
+              rel="noopener noreferrer">
+              <div class="contact-link-icon">f</div>
+              Yes Media Lab on Facebook
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/company/yes-media-lab" target="_blank"
+              rel="noopener noreferrer">
+              <div class="contact-link-icon">💼</div>
+              LinkedIn Company Page
+            </a>
+            <a class="contact-link" href="https://x.com/YesMediaLab" target="_blank" rel="noopener noreferrer">
+              <div class="contact-link-icon">𝕏</div>
+              @YesMediaLab on X
+            </a>
+          </div>
+        </div>
+        <div class="contact-form reveal" style="transition-delay:0.15s">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@company.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Business Type</label>
+              <select>
+                <option value="">Select type…</option>
+                <option>Startup</option>
+                <option>Personal Brand</option>
+                <option>Established Business</option>
+                <option>Creator / Influencer</option>
+                <option>Agency</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Service Needed</label>
+              <select>
+                <option value="">Select service…</option>
+                <option>YouTube Automation</option>
+                <option>YouTube Channel Audit</option>
+                <option>Social Media Content</option>
+                <option>AI Content Creation</option>
+                <option>Social Media SEO</option>
+                <option>Script Writing</option>
+                <option>Channel Management</option>
+                <option>Full Package</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Goals</label>
+            <textarea
+              placeholder="Describe your brand, current challenges, and what growth looks like for you…"></textarea>
+          </div>
+          <button class="form-submit" onclick="handleSubmit(this)">🚀 &nbsp;Send My Request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img class="brand-logo" src="assets/yesmedialab-logo.png" alt="Yes Media Lab">
+            <span class="footer-logo-name">Yes Media Lab</span>
+          </div>
+          <p>AI-Powered Content & Social Media Growth Solutions. Helping brands, creators, and businesses scale their
+            online presence through intelligent automation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Content Creation</a></li>
+            <li><a href="#services">YouTube Automation</a></li>
+            <li><a href="#services">AI Content</a></li>
+            <li><a href="#services">Social Media SEO</a></li>
+            <li><a href="#services">Script Writing</a></li>
+            <li><a href="#ai-stack">YouTube Channel Audit</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Yes Media Lab. All Rights Reserved.</div>
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.youtube.com/@YesMediaLab" target="_blank" rel="noopener noreferrer"
+            title="YouTube">▶</a>
+          <a class="social-btn" href="https://www.linkedin.com/company/yes-media-lab" target="_blank"
+            rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a class="social-btn" href="https://x.com/YesMediaLab" target="_blank" rel="noopener noreferrer"
+            title="X">𝕏</a>
+          <a class="social-btn" href="https://www.facebook.com/profile.php?id=61591362758970" target="_blank"
+            rel="noopener noreferrer" title="Facebook">f</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── FAQ toggle ──
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // ── Form submit ──
+    function handleSubmit(btn) {
+      btn.textContent = '✅  Message Sent!';
+      btn.style.background = 'linear-gradient(135deg,#00E5A0,#14B8A6)';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = '🚀 &nbsp;Send My Request';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }
+
+    // ── Navbar scroll ──
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 60) {
+        nav.style.padding = '0.65rem 2rem';
+        nav.style.borderBottomColor = 'rgba(108,99,255,0.25)';
+      } else {
+        nav.style.padding = '1rem 2rem';
+        nav.style.borderBottomColor = 'rgba(108,99,255,0.15)';
+      }
+    });
+
+    // ── Mobile nav ──
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      const isShown = links.style.display === 'flex';
+      links.style.cssText = isShown ? '' : `
+    display: flex; flex-direction: column; position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: rgba(15,23,42,0.97); backdrop-filter: blur(16px);
+    padding: 2rem; gap: 1.5rem; border-bottom: 1px solid rgba(108,99,255,0.2);
+    z-index: 999;
+  `;
+    });
+
+    // ── Smooth scroll ──
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const links = document.querySelector('.nav-links');
+          if (window.innerWidth <= 768) links.style.cssText = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
